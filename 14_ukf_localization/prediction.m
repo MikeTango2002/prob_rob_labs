@@ -44,7 +44,7 @@ function [sigmaP, weightsM, weightsC] = prediction(mu, sigma, transition)
 	%the returned sigmaP matrix is composed by (2n+1) sigma point, one
 	% for each column
 	
-	sigmaP = zeros(size(mu), 0);
+	sigmaP = zeros(size(mu,2), 0);
 	%apply transition to every sigma point
 	for i=1:size(sigmaP_xu,2)
 		curr_sigma_mu = sigmaP_xu(1:3,i);
