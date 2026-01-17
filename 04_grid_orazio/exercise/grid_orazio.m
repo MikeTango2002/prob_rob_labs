@@ -88,14 +88,14 @@ function keyPressed (src_, event_)
 	inverse_normalizer = 0;
 	for row = 1:map_rows
 		for col = 1:map_cols
-    	% state_belief(row, col) *= %TODO;
-      % inverse_normalizer     += %TODO;
+    	state_belief(row, col) *= observationModel(map, state_ground_truth(1), state_ground_truth(2), observations);
+      inverse_normalizer     += state_belief(row, col);
       		endfor
 	endfor	
 
   #NORMALIZE the belief probabilities to [0, 1]
-	% normalizer = %TODO;	
-	% state_belief *= %TODO;
+	normalizer = 1 / inverse_normalizer;	
+	state_belief *= normalizer;
 
 #---------------------------------- FILTERING ----------------------------------
 
