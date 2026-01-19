@@ -27,7 +27,7 @@ function observations = associateLandmarkIDs(mu, sigma, observations, state_to_i
 	# dimension of the current map (how many landmarks we have already seen)
 	N = (state_dim-3)/2;
 
-	#if we do not any landmarks in the state to associate or have no measurements 
+	#if we do not have any landmarks in the state to associate or have no measurements 
 	if(N == 0 || M == 0)
 		return;
 	endif
