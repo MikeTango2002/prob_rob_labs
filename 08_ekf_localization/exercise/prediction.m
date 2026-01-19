@@ -35,7 +35,7 @@ function [mu, sigma] = prediction(mu, sigma, transition)
 
 	%Jacobian A
 	A = [1, 0, -u_x * sin(u_theta);
-		 0, 1. u_x + cos(u_theta);
+		 0, 1, u_x + cos(u_theta);
 		 0, 0, 1];
 
 
