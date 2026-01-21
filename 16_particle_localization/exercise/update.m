@@ -46,7 +46,7 @@ function weights = update(samples, weights, landmarks, observations)
 			endfor
 		endfor
 		
-		negative_log_likelihood = min(l_mn');
+		negative_log_likelihood = min(l_mn'); % in octave the min function on a matrix returns a row vector with the min of each row. Since we want the min for each landmark (column), we transpose the matrix before applying min
 		dropped_measurements = 0;
 		for k=1:num_landmarks_seen
 			if(negative_log_likelihood(k) > l_miss)
