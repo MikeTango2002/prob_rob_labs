@@ -52,5 +52,7 @@ function [sigmaP, weightsM, weightsC] = prediction(mu, sigma, transition)
 		% sigmaP(:,end+1) = motion_model(curr_sigma_mu, curr_input_u);
 		sigmaP = [sigmaP motion_model(curr_sigma_mu, curr_input_u)]; 
 	end
+	printf('Predicted %u sigma points\n', size(sigmaP,2));
+	fflush(stdout);
 
 end
